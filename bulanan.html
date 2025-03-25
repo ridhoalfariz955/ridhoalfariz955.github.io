@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mode Siang & Malam</title>
+    <style>
+        /* Gaya dasar */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background 0.3s, color 0.3s;
+        }
+       
+        
+        .toggle-btn {
+            padding: 10px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            transition: background 0.3s;
+        }
+        .toggle-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Mode malam */
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+        .dark-mode .toggle-btn {
+            background-color: #f4f4f4;
+            color: black;
+        }
+        .dark-mode .toggle-btn:hover {
+            background-color: #dcdcdc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      
+        <button class="toggle-btn" onclick="toggleMode()">🌙 Mode Malam</button>
+    </div>
+
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            const button = document.querySelector(".toggle-btn");
+
+            // Toggle kelas dark-mode
+            body.classList.toggle("dark-mode");
+
+            // Simpan preferensi ke localStorage
+            if (body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+                button.textContent = "🌞 Mode Siang";
+            } else {
+                localStorage.setItem("theme", "light");
+                button.textContent = "🌙 Mode Malam";
+            }
+        }
+
+        // Cek localStorage saat halaman dimuat
+        window.onload = function() {
+            const body = document.body;
+            const button = document.querySelector(".toggle-btn");
+            const theme = localStorage.getItem("theme");
+
+            if (theme === "dark") {
+                body.classList.add("dark-mode");
+                button.textContent = "🌞 Mode Siang";
+            }
+        };
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Voucher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f7f7;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .voucher-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .voucher {
+            background-color: rgb(5, 40, 153);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 10px rgb(47, 147, 165);
+            width: 100px;
+            animation: bounce 1s infinite alternate;
+        }
+        .voucher:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .voucher:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .voucher:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        .voucher:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+        .voucher h5 {
+            margin: 0 0 10px;
+            color: #f7f9fc;
+        }
+        .voucher p {
+            margin: 5px 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        h4{
+            color: rgb(50, 11, 192);
+        }
+    </style>
+</head>
+<body> <img src="a63e215c-2ddc-4579-9201-4f883119907f.jpg"
+     alt="Logo" style="width:100px; height:auto; 
+     border-radius: 55%;"/>
+    <h4>Daftar paket bulanan</h4>
+    <div class="voucher-container">
+        <div class="voucher">
+            <h5>10 mps</h5>
+            <p>Rp 150.000</p>
+        </div>
+        <div class="voucher">
+            <h5>15 mbps </h5>
+            <p>Rp200.000</p>
+        </div>
+        <div class="voucher">
+            <h5>20 mbps</h5>
+            <p>Rp250.000</p>
+        </div>
+        <div class="voucher">
+            <h5>50 mbps</h5>
+            <p>Rp500.000</p>
+        </div>
+    </div>
+</body>
+</html>

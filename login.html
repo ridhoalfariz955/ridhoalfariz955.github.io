@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title id="title"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="theme-color" content="#2484ac" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dobel.css">
+
+</head>
+
+<body onload="voucher()">
+        $(if chap-id)
+        <form name="sendin" action="$(link-login-only)" method="post">
+            <input type="hidden" name="username" />
+            <input type="hidden" name="password" />
+            <input type="hidden" name="dst" value="$(link-orig)" />
+            <input type="hidden" name="popup" value="true" />
+        </form>
+
+        <script type="text/javascript" src="md5.js"></script>
+        <script type="text/javascript">
+            function doLogin() {
+                document.sendin.username.value = document.login.username.value;
+                document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value +
+                    '$(chap-challenge)');
+                document.sendin.submit();
+                return false;
+            }
+        </script>
+        $(endif)
+
+       
+            <div id="main" class="main">
+            
+            <div class="foto">  
+                <img src="a63e215c-2ddc-4579-9201-4f883119907f.jpg" alt="Logo" style="width:50px; height:auto; border-radius: 15px;"/>
+                <p class="kelap-kelip">PANDAWA.NET</p>
+                <img src="logoamd.png" alt="s"style="width:100px; height:auto; border-radius: 1px;">
+            </div>
+            <div class=" nink"> <h3>masukan vocer anda</h3>
+            </div>
+            <div class="box" id="infologin">
+            </div>
+            <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
+                $(endif)>
+                <input type="hidden" name="dst" value="$(link-orig)" />
+                <input type="hidden" name="popup" value="true" />
+                <input class="username" name="username" type="text" value="" />
+                <input class="password" name="password" placeholder="Password" type="hidden" />
+
+                <button class="button" type="submit"><i class="icon icon-login">&#xe803;</i> Login</button>
+
+            </form>
+
+<div class="voc">
+      <!-- Display the countdown timer in an element -->
+      <p id="demo"></p>
+          
+
+           
+      <button class="btn" onclick="voucher();">
+        <i class="icon icon-ticket">&#xe802;</i> Voucher
+    </button>
+    <button class="btn" onclick="member();">
+        <i class="icon icon-user-circle-o">&#xf2be;</i> Member
+    </button>
+    
+    
+
+</div>
+              
+<div class="pilihan">
+<a class="" href="list .html"> list vocr</a>
+<a class="" href="bulanan.html">  bulanan</a>
+
+<a class="" href="daftar.html">daftar</a>
+</div>  
+
+<!--
+
+            $(if trial == 'yes')
+            <div class="box">Coba gratis <a style="text-decoration: underline; color:#2484ac;" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">klik di sini</a></div>
+            $(endif)
+
+            $(if error)<div class="notice">$(error)</div>$(endif) -->
+
+                
+
+             
+        <br />
+        <div class="pow" style="color:#3bac24;">
+     
+            <i>Powered by <a style="color:#2484ac; text-decoration:underline;" href="https://laksa19.github.io">Mikhmon</a></i>
+            <!-- Tolong jangan dihilangkan bagian ini-->
+        </div>
+
+<script type="text/javascript">
+var hostname = window.location.hostname;
+document.getElementById('title').innerHTML = hostname  + " > login";
+
+document.login.username.focus();
+
+var infologin = document.getElementById('infologin');
+infologin.innerHTML = "";
+
+// login page 2 mode by Laksamadi Guko
+var username = document.login.username;
+var password = document.login.password;
+
+username.placeholder = "Kode Voucher";
+
+// set password = username
+function setpass() {
+    var user = username.value
+    //user = user.toLowerCase();
+    username.value = user;
+    password.value = user;
+}
+
+username.onkeyup = setpass;
+
+// change to voucher mode
+function voucher() {
+    username.focus();
+    username.onkeyup = setpass;
+    username.placeholder = "Kode Voucher";
+    username.style = "border-radius:3px;"
+    password.type = "hidden";
+    infologin.innerHTML = "";
+}
+
+// change to member mode
+function member() {
+    username.focus();
+    username.onkeyup = "";
+    username.placeholder = "Username";
+    username.style = "border-radius:3px 3px 0px 0px;"
+    password.type = "password";
+    infologin.innerHTML = "Masukkan Username dan Password<br>kemudian klik login.";
+}
+</script>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("May 3, 2022 00:00:01").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  // document.getElementById("demo").innerHTML = days + " Hari " + hours + " Jam " + minutes + " Menit " + seconds + " Detik ";
+  document.getElementById("demo").innerHTML = days + " Hari Menjelang Lebaran";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "";
+  }
+}, 1000);
+</script>
+
+
+<script> //buat pemberitahuan jika vocer salah
+ //   document.addEventListener("DOMContentLoaded", function() {
+        // Cek apakah ada parameter error di URL
+   //     const urlParams = new URLSearchParams(window.location.search);
+    //    const errorMsg = urlParams.get("error");
+    
+   //     if (errorMsg) {
+  ////          alert("⚠️ Login gagal! Periksa kembali username atau password Anda.");
+ ////       }
+ //   });
+    </script>
+
+</body>
+
+</html>

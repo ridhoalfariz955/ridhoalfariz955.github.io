@@ -1,0 +1,192 @@
+
+.foto{
+  height: 100px;
+   display: flex;
+    justify-content: center; /* Tengahkan secara horizontal */
+    align-items: center; /* Tengahkan secara vertikal */
+   
+
+
+}
+
+ 
+ 
+.icon
+{
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+iframe  {
+  float:left; 
+  height:22px; 
+  width:100%;
+}
+
+
+
+.voc{
+ 
+  
+  gap: 20px;
+  display: flex;
+  justify-content: center;  /* Tengahkan secara horizontal */
+  align-items: center;      /* Tengahkan secara vertikal */
+  height: 15vh;            /* Buat setinggi layar penuh */
+  
+ 
+  
+}
+
+
+.username {
+  background-color: #e0dfd4d3;
+  border:2px solid rgb(61, 21, 124) ;
+  border-radius:32x;
+  border-bottom: 2px solid #1b398b  ;
+  text-align:center;
+  font-size: 16px;
+  color: #000000;
+  outline: none;
+  width: 99%;
+  height: 35px;
+}
+
+.password {
+  background-color: #FDFBFB;
+  border: none;
+  border-radius:0px 0px 3px 3px;
+  border-top: 1px solid #f2f2f2;
+  text-align:center;
+  font-size: 16px;
+  color: #000000;
+  outline: none;
+  width: 99%;
+  height: 35px;
+}
+
+/* From Uiverse.io by 212004ALJI */ 
+/* Hanya tombol dengan class .btn-glitch yang memiliki efek glitch */
+/* From Uiverse.io by nikk7007 */ 
+.button {
+  --color: #00A97F;
+  padding: 0.8em 1.7em;
+  background-color: transparent;
+  border-radius: .3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+  width: 100%;
+  top:5px
+ }
+ 
+ .button::before, .button::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+ }
+ 
+ .button::before {
+  top: -1em;
+  left: -1em;
+ }
+ 
+ .button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+ }
+ 
+ .button:hover::before, .button:hover::after {
+  height: 410px;
+  width: 410px;
+ }
+ 
+ .button:hover {
+  color: rgb(10, 25, 30);
+ }
+ 
+ .button:active {
+  filter: brightness(.8);
+ }
+
+
+.pilihan {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.pilihan a {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #000;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 14px;
+  text-align: center;
+  position: relative;
+  border: 3px solid;
+font-weight: bold;
+  border-image-slice: 1;
+  animation: borderAnim 3s linear infinite;
+ 
+}
+
+
+@keyframes borderAnim {
+  0% {
+    border-image-source: linear-gradient(0deg, #03a9f4, #f441a5, #03a9f4);
+  }
+  25% {
+    border-image-source: linear-gradient(90deg, #03a9f4, #f441a5, #05ec37);
+  }
+  50% {
+    border-image-source: linear-gradient(180deg, #03a9f4, #f441a5, #e5f507);
+  }
+  75% {
+    border-image-source: linear-gradient(270deg, #03a9f4, #f441a5, #03a9f4);
+  }
+  100% {
+    border-image-source: linear-gradient(360deg, #03a9f4, #f441a5, #e61b69);
+  }
+}
+
+/* Efek hover */
+.pilihan a:hover {
+  background-color: #6a706e;
+  color: #fff;
+}
+
+

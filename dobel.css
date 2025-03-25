@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+ background-color: black;
+    transition: background 0.3s, color 0.3s;
+}
+.btn {
+   
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: rgb(14, 14, 26);
+    color: rgb(234, 234, 234);
+    font-weight: 700;
+    transition: 0.6s;
+    box-shadow: 0px 0px 20px #1f4c65;
+    -webkit-box-reflect: below 1px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+  }
+  
+  .btn:active {
+    scale: 0.32;
+  }
+  
+  .btn:hover {
+    background: rgb(2,29,78);
+    background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+    color: rgb(4, 4, 38);
+  }
+
+
+
+/* Menengahkan teks tanpa container */
+/* Menengahkan teks tanpa container */
+/* Menengahkan div ke tengah layar */
+.nink {
+  
+  margin-left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Styling untuk teks dalam nink */
+.nink h3 {
+    font-size: 15px;
+    font-weight: bold;
+    color: paleturquoise;
+    animation: wave 1.5s infinite ease-in-out;
+}
+
+/* Animasi teks bergelombang */
+@keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-10px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(10px); }
+}
+
+   p {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: red;
+    animation: warnaTeks 1s infinite alternate;
+  }
+  
+  /* Animasi warna teks */
+  @keyframes warnaTeks {
+    0% { color: red; }
+    20% { color: orange; }
+    40% { color: yellow; }
+    60% { color: lime; }
+    80% { color: cyan; }
+    100% { color: magenta; }
+      }
+      
+
